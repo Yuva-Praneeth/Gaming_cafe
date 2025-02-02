@@ -1,0 +1,253 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Book Your Gaming Session - GamersHub</title>
+    <link rel="stylesheet" href="styles.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css">
+</head>
+<body>
+    <nav class="navbar">
+        <ul>
+            <li class="logo-container">
+                <a href="Home_page.html" class="logo">Gamers<span style="color: #ffffff">Hub</span></a>
+                <button class="mobile-menu-btn">
+                    <i class="fas fa-bars"></i>
+                </button>
+            </li>
+            <div class="nav-links">
+                <li><a href="Home_page.html">Home</a></li>
+                <li><a href="#">Stations</a></li>
+                <li><a href="#">Pricing</a></li>
+                <li><a href="#">About</a></li>
+                <li><a href="#">Contact</a></li>
+            </div>
+        </ul>
+    </nav>
+
+    <div class="booking-container">
+        <div class="booking-form">
+            <h2>Book Your Gaming Session</h2>
+            <form action="#" method="POST">
+                <div class="form-group">
+                    <label for="gameId">Game ID</label>
+                    <input type="text" id="gameId" name="gameId" required>
+                </div>
+
+                <div class="form-group">
+                    <label for="location">Location</label>
+                    <select id="location" name="location" required>
+                        <option value="">Select Location</option>
+                        <option value="btm">BTM Layout</option>
+                        <option value="whitefield">Whitefield</option>
+                        <option value="electronic-city">Electronic City</option>
+                    </select>
+                </div>
+
+                <div class="form-group">
+                    <label for="bookingDate">Date</label>
+                    <input type="date" id="bookingDate" name="bookingDate" required min="">
+                </div>
+
+                <div class="form-group time-slots">
+                    <label>Gaming Duration</label>
+                    <div class="time-inputs">
+                        <div class="time-input">
+                            <label for="fromTime">From:</label>
+                            <input type="time" id="fromTime" name="fromTime" required>
+                        </div>
+                        <div class="time-input">
+                            <label for="toTime">To:</label>
+                            <input type="time" id="toTime" name="toTime" required>
+                        </div>
+                    </div>
+                    <span class="time-hint">Minimum duration: 30 minutes</span>
+                </div>
+
+                <button type="submit" class="submit-btn">Book Now</button>
+            </form>
+        </div>
+    </div>
+
+    <!-- Seat Selection Popup -->
+    <div class="seat-selection-popup" id="seatPopup">
+        <div class="popup-content">
+            <h2>Select Your Gaming Station</h2>
+            <div class="station-types">
+                <div class="station-type">
+                    <h3>HIGH PERFORMANCE</h3>
+                    <p class="price">₹320/hr</p>
+                    <ul class="features-list">
+                        <li>RTX 4090 GPU</li>
+                        <li>360Hz Monitor</li>
+                        <li>Premium Chair</li>
+                    </ul>
+                    <span class="availability">Available</span>
+                </div>
+                <div class="station-type">
+                    <h3>PRIME</h3>
+                    <p class="price">₹230/hr</p>
+                    <ul class="features-list">
+                        <li>RTX 3080 GPU</li>
+                        <li>240Hz Monitor</li>
+                        <li>Gaming Chair</li>
+                    </ul>
+                    <span class="availability">Available</span>
+                </div>
+                <div class="station-type">
+                    <h3>CLASSIC</h3>
+                    <p class="price">₹190/hr</p>
+                    <ul class="features-list">
+                        <li>RTX 3060 GPU</li>
+                        <li>144Hz Monitor</li>
+                        <li>Regular Chair</li>
+                    </ul>
+                    <span class="availability">Available</span>
+                </div>
+            </div>
+            <div class="station-selection">
+                <h3>Select Number of Stations</h3>
+                <div class="number-selector">
+                    <button class="number-btn" data-value="1">1</button>
+                    <button class="number-btn" data-value="2">2</button>
+                    <button class="number-btn" data-value="3">3</button>
+                    <button class="number-btn" data-value="4">4</button>
+                    <button class="number-btn" data-value="5">5</button>
+                </div>
+            </div>
+            <div class="popup-buttons">
+                <button class="confirm-btn">Confirm Selection</button>
+                <button class="cancel-btn">Cancel</button>
+            </div>
+            <button class="close-popup">&times;</button>
+        </div>
+    </div>
+
+    <!-- Add this after the first popup -->
+    <div class="seat-map-popup" id="seatMapPopup">
+        <div class="popup-content">
+            <h2>Select Your Seats</h2>
+            <div class="seat-map-container">
+                <div class="screen">
+                    <span>GAMING ZONE</span>
+                </div>
+                <div class="seat-map">
+                    <div class="row">
+                        <span class="row-label">A</span>
+                        <div class="seat" data-seat="A1">A1</div>
+                        <div class="seat" data-seat="A2">A2</div>
+                        <div class="seat" data-seat="A3">A3</div>
+                        <div class="seat" data-seat="A4">A4</div>
+                        <div class="seat" data-seat="A5">A5</div>
+                    </div>
+                    <div class="row">
+                        <span class="row-label">B</span>
+                        <div class="seat" data-seat="B1">B1</div>
+                        <div class="seat" data-seat="B2">B2</div>
+                        <div class="seat" data-seat="B3">B3</div>
+                        <div class="seat" data-seat="B4">B4</div>
+                        <div class="seat" data-seat="B5">B5</div>
+                    </div>
+                    <div class="row">
+                        <span class="row-label">C</span>
+                        <div class="seat" data-seat="C1">C1</div>
+                        <div class="seat" data-seat="C2">C2</div>
+                        <div class="seat" data-seat="C3">C3</div>
+                        <div class="seat" data-seat="C4">C4</div>
+                        <div class="seat" data-seat="C5">C5</div>
+                    </div>
+                </div>
+                <div class="seat-legend">
+                    <div class="legend-item">
+                        <div class="seat"></div>
+                        <span>Available</span>
+                    </div>
+                    <div class="legend-item">
+                        <div class="seat selected"></div>
+                        <span>Selected</span>
+                    </div>
+                    <div class="legend-item">
+                        <div class="seat occupied"></div>
+                        <span>Occupied</span>
+                    </div>
+                </div>
+            </div>
+            <div class="selected-seats-info">
+                <p>Selected Seats: <span id="selectedSeatsText">None</span></p>
+                <p>Total Amount: ₹<span id="totalAmount">0</span></p>
+            </div>
+            <div class="popup-buttons">
+                <button class="confirm-seats-btn">Confirm Seats</button>
+                <button class="back-btn">Back</button>
+            </div>
+            <button class="close-popup">&times;</button>
+        </div>
+    </div>
+
+    <!-- Billing Dialog -->
+    <div class="billing-dialog" id="billingDialog">
+        <div class="popup-content">
+            <h2>Booking Confirmation</h2>
+            <div class="bill-container">
+                <div class="bill-header">
+                    <img src="https://cdn-icons-png.flaticon.com/512/1786/1786591.png" alt="GamersHub Logo" width="60">
+                    <h3>GamersHub Invoice</h3>
+                </div>
+                <div class="bill-details">
+                    <div class="bill-row">
+                        <span>Booking ID:</span>
+                        <span id="bookingId"></span>
+                    </div>
+                    <div class="bill-row">
+                        <span>Date:</span>
+                        <span id="billDate"></span>
+                    </div>
+                    <div class="bill-row">
+                        <span>Time Slot:</span>
+                        <span id="billTimeSlot"></span>
+                    </div>
+                    <div class="bill-row">
+                        <span>Location:</span>
+                        <span id="billLocation"></span>
+                    </div>
+                    <div class="bill-row">
+                        <span>Station Type:</span>
+                        <span id="billStationType"></span>
+                    </div>
+                    <div class="bill-row">
+                        <span>Selected Seats:</span>
+                        <span id="billSelectedSeats"></span>
+                    </div>
+                    <div class="bill-row">
+                        <span>Duration:</span>
+                        <span id="billDuration"></span>
+                    </div>
+                    <div class="bill-row total">
+                        <span>Total Amount:</span>
+                        <span id="billTotalAmount"></span>
+                    </div>
+                </div>
+                <div class="notification-info">
+                    <p>✉️ Invoice has been sent to your email</p>
+                    <p>📱 Booking details sent via WhatsApp</p>
+                </div>
+                <div class="payment-instructions">
+                    <p>Please complete the payment using any of the following methods:</p>
+                    <div class="payment-methods">
+                        <button class="payment-btn">UPI</button>
+                        <button class="payment-btn">Card</button>
+                        <button class="payment-btn">Net Banking</button>
+                    </div>
+                </div>
+            </div>
+            <div class="popup-buttons">
+                <button class="download-btn">Download Invoice</button>
+                <button class="close-bill-btn">Close</button>
+            </div>
+        </div>
+    </div>
+
+    <script src="script.js"></script>
+</body>
+</html>
